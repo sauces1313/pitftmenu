@@ -9,8 +9,8 @@
 
 
 export FRAMEBUFFER=/dev/fb1
-export MENUDIR="/home/pi/pitftmenu/"
+export MENUDIR="/home/ubuntu/pitftmenu/"
 startpage="menu_kali-1.py"
 /usr/bin/clear
 
-/usr/bin/env python $MENUDIR$startpage
+/usr/bin/env python3 $MENUDIR$startpage
