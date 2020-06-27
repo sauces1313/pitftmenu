@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, os, subprocess, time, pygame
 from pygame.locals import *
 from subprocess import *
@@ -94,7 +94,7 @@ def button(number):
     if number == 6:
         # Refresh
         pygame.quit()
-	os.execv(__file__, sys.argv)
+        os.execv(__file__, sys.argv)
 
 
 # colors    R    G    B

@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-import sys, os, pygame, subprocess, commands, time, socket
+#!/usr/bin/env python3
+import sys, os, pygame, subprocess, time, socket
 from pygame.locals import *
 from subprocess import *
 os.environ["SDL_FBDEV"] = "/dev/fb1"
@@ -33,22 +33,22 @@ def on_touch():
     #  x_min                 x_max   y_min                y_max
     # button 1 event
     if 30 <= touch_pos[0] <= 240 and 105 <= touch_pos[1] <=160:
-            button(1)
+        button(1)
     # button 2 event
     if 260 <= touch_pos[0] <= 470 and 105 <= touch_pos[1] <=160:
-            button(2)
+        button(2)
     # button 3 event
     if 30 <= touch_pos[0] <= 240 and 180 <= touch_pos[1] <=235:
-            button(3)
+        button(3)
     # button 4 event
     if 260 <= touch_pos[0] <= 470 and 180 <= touch_pos[1] <=235:
-            button(4)
+        button(4)
     # button 5 event
     if 30 <= touch_pos[0] <= 240 and 255 <= touch_pos[1] <=310:
-            button(5)
+        button(5)
     # button 6 event
     if 260 <= touch_pos[0] <= 470 and 255 <= touch_pos[1] <=310:
-            button(6)
+        button(6)
 
 # Get Your External IP Address
 def get_ip():
@@ -88,7 +88,7 @@ def run_cmd(cmd):
 def check_service(srvc):
     try:
         check = "/usr/sbin/service " + srvc + " status"
-	status = run_cmd(check)
+        status = run_cmd(check)
         if ("is running" in status) or ("active (running)") in status:
             return True
         else:
@@ -105,11 +105,11 @@ def toggle_service(srvc):
         run_cmd(stop)
         return False
     else:
-	run_cmd(start)
+        run_cmd(start)
         return True
 
 def check_vnc():
-    if 'vnc :1' in commands.getoutput('/bin/ps -ef'):
+    if 'vnc :1' in subprocess.getoutput('/bin/ps -ef'):
         return True
     else:
         return False
@@ -118,19 +118,19 @@ def check_vnc():
 def button(number):
     if number == 1:
         # Apache
-	if toggle_service("apache2"):
-	    make_button(" WWW Server", 30, 105, 55, 210, green)
-	else:
-	    make_button(" WWW Server", 30, 105, 55, 210, tron_light)
-	return
+        if toggle_service("apache2"):
+            make_button(" WWW Server", 30, 105, 55, 210, green)
+        else:
+            make_button(" WWW Server", 30, 105, 55, 210, tron_light)
+    return
 
     if number == 2:
         # Pure-ftpd
-	if toggle_service("pure-ftpd"):
-	    make_button("   FTP Server", 260, 105, 55, 210, green)
-	else:
-	    make_button("   FTP Server", 260, 105, 55, 210, tron_light)
-	return
+     if toggle_service("pure-ftpd"):
+        make_button("   FTP Server", 260, 105, 55, 210, green)
+     else:
+        make_button("   FTP Server", 260, 105, 55, 210, tron_light)
+     return
 
     if number == 3:
         # VNC Server
@@ -146,7 +146,7 @@ def button(number):
         # msfconsole
         pygame.quit()
         call("/usr/bin/msfconsole", shell=True)
-	os.execv(__file__, sys.argv)
+        os.execv(__file__, sys.argv)
 
     if number == 5:
         # Previous page

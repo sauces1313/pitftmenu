@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import pygame, os, subprocess, time
 import RPi.GPIO as GPIO
 from pygame.locals import *
@@ -24,18 +24,18 @@ def run_cmd(cmd):
 
 # Turn screen on
 def screen_on():
-        pygame.quit()
-	backlight = GPIO.PWM(18, 1023)
-	backlight.start(100)
-	GPIO.cleanup()
-        page=os.environ["MENUDIR"] + "menu_kali-1.py"
-        os.execvp("python", ["python", page])
+    pygame.quit()
+    backlight = GPIO.PWM(18, 1023)
+    backlight.start(100)
+    GPIO.cleanup()
+    page=os.environ["MENUDIR"] + "menu_kali-1.py"
+    os.execvp("python", ["python", page])
 
 
 # Turn screen off
 def screen_off():
-	backlight = GPIO.PWM(18, 0.1)
-	backlight.start(0)
+    backlight = GPIO.PWM(18, 0.1)
+    backlight.start(0)
 
 
 #While loop to manage touch screen inputs

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys, os, subprocess, time, pygame, socket
 from pygame.locals import *
 from subprocess import *

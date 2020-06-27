@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys, pygame
 from pygame.locals import *
 import time
@@ -57,7 +58,7 @@ def on_touch():
 
 # Define each button press action
 def button(number):
-    print "You pressed button ",number
+    print("You pressed button ", number)
 
     if number == 1:
         time.sleep(5) #do something interesting here
@@ -132,9 +133,9 @@ make_button("Menu item 8", 260, 255, 55, 210, blue)
 while 1:
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
-            print "screen pressed" #for debugging purposes
+            print("screen pressed") #for debugging purposes
             pos = (pygame.mouse.get_pos() [0], pygame.mouse.get_pos() [1])
-            print pos #for checking
+            print(pos) #for checking
             pygame.draw.circle(screen, white, pos, 2, 0) #for debugging purposes - adds a small dot where the screen is pressed
             on_click()
 

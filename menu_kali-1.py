@@ -1,5 +1,5 @@
-#!/usr/bin/env python
-import sys, os, time, subprocess, commands, pygame
+#!/usr/bin/env python3
+import sys, os, time, subprocess, pygame
 from pygame.locals import *
 from subprocess import *
 os.environ["SDL_FBDEV"] = "/dev/fb1"
@@ -83,7 +83,7 @@ def button(number):
     if number == 4:
         # htop
         pygame.quit()
-	process = subprocess.call("/usr/bin/htop", shell=True)
+        process = subprocess.call("/usr/bin/htop", shell=True)
         os.execv(__file__, sys.argv)        
 
     if number == 5:
@@ -98,8 +98,8 @@ def button(number):
         # next page
         pygame.quit()
         ##startx only works when we don't use subprocess here, don't know why
-	page=os.environ["MENUDIR"] + "menu_kali-2.py"
-	os.execvp("python", ["python", page])
+        page=os.environ["MENUDIR"] + "menu_kali-2.py"
+        os.execvp("python", ["python", page])
         sys.exit()
 
 
@@ -143,7 +143,7 @@ pygame.draw.rect(screen, tron_regular, (0,0,479,319),8)
 pygame.draw.rect(screen, tron_light, (2,2,479-4,319-4),2)
 
 pi_hostname = run_cmd("hostname")
-pi_hostname = "  " + pi_hostname[:-1]
+pi_hostname = ("  " + pi_hostname[:-1])
 # Buttons and labels
 # First Row Label
 make_label(pi_hostname, 32, 30, 48, tron_inverse)
