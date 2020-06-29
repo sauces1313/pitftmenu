@@ -64,14 +64,14 @@ def button(number):
         # X TFT
         pygame.quit()
         ## Requires "Anybody" in dpkg-reconfigure x11-common if we have scrolled pages previously
-        run_cmd("/usr/bin/sudo -u pi FRAMEBUFFER=/dev/fb1 startx")
+        run_cmd("/usr/bin/sudo -u kali FRAMEBUFFER=/dev/fb1 startx")
         os.execv(__file__, sys.argv)        
 
     if number == 2:
         # X HDMI
         pygame.quit()
         ## Requires "Anybody" in dpkg-reconfigure x11-common if we have scrolled pages previously
-        run_cmd("/usr/bin/sudo -u pi FRAMEBUFFER=/dev/fb0 startx")
+        run_cmd("/usr/bin/sudo -u kali FRAMEBUFFER=/dev/fb0 startx")
         os.execv(__file__, sys.argv)        
 
 
@@ -120,14 +120,14 @@ orange   = (255, 127,   0)
 tron_ora = (255, 202,   0)
 
 # Tron theme orange
-tron_regular = tron_ora
-tron_light   = tron_yel
-tron_inverse = tron_whi
+#tron_regular = tron_ora
+#tron_light   = tron_yel
+#tron_inverse = tron_whi
 
 # Tron theme blue
-##tron_regular = tron_blu
-##tron_light   = tron_whi
-##tron_inverse = tron_yel 
+tron_regular = tron_blu
+tron_light   = tron_whi
+tron_inverse = tron_yel 
 
 # Set up the base menu you can customize your menu with the colors above
 

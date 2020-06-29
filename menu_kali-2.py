@@ -92,7 +92,7 @@ def button(number):
     if number == 1:
         # Kismet
          pygame.quit()
-         subprocess.call("/usr/bin/sudo -u pi /usr/bin/kismet", shell=True)
+         subprocess.call("/usr/bin/sudo -u kali /usr/bin/kismet", shell=True)
          os.execv(__file__, sys.argv)
 
     if number == 2:

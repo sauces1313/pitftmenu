@@ -135,10 +135,10 @@ def button(number):
     if number == 3:
         # VNC Server
         if check_vnc():
-            run_cmd("/usr/bin/sudo -u pi /usr/bin/vncserver -kill :1")
+            run_cmd("/usr/bin/sudo -u kali /usr/bin/vncserver -kill :1")
             make_button("  VNC-Server",  30, 180, 55, 210, tron_light)
         else:
-            run_cmd("/usr/bin/sudo -u pi /usr/bin/vncserver :1")
+            run_cmd("/usr/bin/sudo -u kali /usr/bin/vncserver :1")
             make_button("  VNC-Server",  30, 180, 55, 210, green)
         return
 
